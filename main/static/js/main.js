@@ -64,28 +64,20 @@ function sendFormImageData(image_id){
     var image_geo_context = JSON.parse(request.response).image_geo_data;
     var root_context = JSON.parse(request.response).root_data;
 
-    console.log(image_geo_context);
-
     root_time.innerHTML = root_context.total_time;
     root_distance.innerHTML = root_context.total_distance;
 
-//    console.log(String(image_geo_context.lat) + ', ' + String(image_geo_context.lng));
-//    console.log('55.754328, 37.610625');
+//     var locations = [
+//     String(image_geo_context.lat) + ", " + String(image_geo_context.lng),
+//     String(root_context.lat) + ", " + String(root_context.lng)
+//     ]
 //
-//    console.log(    String(context.lat) + '55' + ', ' + String(context.lng) + '55');
-//    console.log('43.473107, 11.888702');
-//
-//    var point_a = String(context.lat) + '55' + ', ' + String(context.lng) + '55';
-//    var point_b = String(image_geo_context.lat) + ', ' + String(image_geo_context.lng);
-
     dir.optimizedRoute({
 
     locations: [
-
     '43.473107, 11.888702',
     '55.754328, 37.610625',
-
-        ]
+    ]
     });
 
     var CustomRouteLayer = MQ.Routing.RouteLayer.extend({
@@ -125,9 +117,4 @@ map.addLayer(new CustomRouteLayer({
     directions: dir,
     fitBounds: true
 }));
-
-//   L.marker([image_geo_context.lat, image_geo_context.lng]).addTo(map)
-//   .bindPopup(String('This is found location'))
-//   .openPopup();
-
 }

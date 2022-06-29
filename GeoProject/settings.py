@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(=e+c5ue02#cqf(ozicy8=0y+*&^buqg#+!_zr^9@%98g*8x_x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -117,21 +117,34 @@ CACHES = {
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+if not DEBUG:
+    DATABASES = {
+        'default': {
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'geo_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Kirill',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':os.environ.get("DATABASE_NAME"),
+            'USER':os.environ.get("DATABASE_USER"),
+            'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
 
-        'HOST': 'localhost',
-        'PORT': '5434',
+            'HOST': os.environ.get("DATABASE_HOST"),
+            'PORT': os.environ.get("DATABASE_PORT"),
+        }
     }
-}
 
+else:
+    DATABASES = {
+        'default': {
 
-# Password validation
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'geo_db',
+            'USER': 'postgres',
+            'PASSWORD': 'Kirill',
+
+            'HOST': 'localhost',
+            'PORT': '5434'
+        }
+    }
+
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -1,13 +1,11 @@
 version: "3.8"
-
-
-
 services:
+
     nginx_server:
       container_name: nginx_server
       image: nginx:latest
       volumes:
-        - ./nginx.conf:/etc/nginx/nginx.conf
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       ports:
         - "8001:80"
       depends_on:
@@ -23,6 +21,7 @@ services:
         - "8000:8000"
       depends_on:
         - database
+        - redis
       networks:
         - default
       healthcheck:
@@ -42,6 +41,14 @@ services:
         - -p 5435
       ports:
         - "5435:5435"
+      networks:
+        - default
+
+    redis:
+      container_name: redis_storage
+      image: redis:latest
+      ports:
+        - 6379:6379
       networks:
         - default
 
