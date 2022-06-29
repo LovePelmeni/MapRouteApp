@@ -6,7 +6,7 @@
 This Project was actually developed by myself pretty long time ago, but now it is fully deployed, 
 well-documented, and fixed for all the bugs, that I was facing.
 
-### The Goal
+### *This application is the concept/prototype of the map routing system, that people asked me to build for their business purpose*
 
 #### This App allows to get the optimal root to the destination with `Time` and `Distance` specified
 
