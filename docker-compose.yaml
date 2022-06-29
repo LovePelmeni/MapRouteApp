@@ -1,0 +1,51 @@
+version: "3.8"
+
+
+
+services:
+    nginx_server:
+      container_name: nginx_server
+      image: nginx:latest
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
+      ports:
+        - "8001:80"
+      depends_on:
+        - application
+      networks:
+        - default
+
+    application:
+      container_name: application_server
+      build: .
+      env_file: ./proj_env.env
+      ports:
+        - "8000:8000"
+      depends_on:
+        - database
+      networks:
+        - default
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8000"]
+        retries: 5
+        interval: 10s
+        timeout: 10s
+
+    database:
+      container_name: database
+      image: postgres:latest
+      environment:
+        POSTGRES_DB: geo_db
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: Kirill
+      command:
+        - -p 5435
+      ports:
+        - "5435:5435"
+      networks:
+        - default
+
+networks:
+  default:
+    external: true
+    name: geo_project_network

@@ -29,8 +29,6 @@ def validate_form_image(request):
     from . import tools
     context = {}
 
-    if not request.is_ajax:
-        return HttpResponseForbidden()
     try:
         with transaction.atomic():
             image = request.FILES.get('image')

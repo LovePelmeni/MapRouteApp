@@ -41,9 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'crispy_forms',
-    'django_eventstream',
-
-    'channels',
     'main',
 ]
 
@@ -108,14 +105,14 @@ LOGGING = {
 
 WSGI_APPLICATION = 'GeoProject.wsgi.application'
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-#         'LOCATION': [
-#             'redis://127.0.0.1:6379',
-#         ],
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': [
+            'redis://127.0.0.1:6379',
+        ],
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -129,20 +126,11 @@ DATABASES = {
         'PASSWORD': 'Kirill',
 
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5434',
     }
 }
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-        # 'BACKEND': "channels_redis.core.RedisChannelLayer",
-        # 'CONFIG': {
-        #      "hosts": [('localhost', 6379)],
-        # }
-    }
-}
-ASGI_APPLICATION = 'GeoProject.asgi.application'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
