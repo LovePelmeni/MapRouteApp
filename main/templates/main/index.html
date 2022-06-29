@@ -1,0 +1,67 @@
+<!doctype html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="{% static 'css/main.css' %}">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <title>{{ title }}</title>
+
+</head>
+<body style="border:0; margin:0">
+<div class="FormBlock" style="max-width: 300px;background-color: #fff;border: 1px solid #fff; position: absolute;
+top: 10px;left: 10px; padding: 10px; z-index: 999;box-shadow: 0 1px 5px rgba(0,0,0,0.65);border-radius: 5px;width:  100%;">
+
+<form method="post" enctype="multipart/form-data" id="ImageForm">
+
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <input type="submit" class="btn btn-success btn-lg" value="Submit">
+</form>
+    <p id="root_time"></p>
+    <p id="root_distance"></p>
+</div>
+<div id="error_context">
+    {{ message }}
+</div>
+
+ <div id="map" style="width: 100%; height: 100vh; position: relative"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!--<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"-->
+<!--  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="-->
+<!--  crossorigin=""></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
+<!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"-->
+<!--  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="-->
+<!--  crossorigin=""/>-->
+
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=HfedBWHCLMdh8C63jwIPDBT2yXBR1xG1"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=HfedBWHCLMdh8C63jwIPDBT2yXBR1xG1"></script>
+
+<!--<script src="{% static 'django_eventstream/json2.js' %}"></script>-->
+<!--<script src="{% static 'django_eventstream/eventsource.min.js' %}"></script>-->
+<!--<script src="{% static 'django_eventstream/reconnecting-eventsource.js' %}"></script>-->
+
+<script src="{% static 'js/cookies.js' %}"></script>
+<script src="{% static 'js/csrfchecker.js' %}"></script>
+
+<!--<script src="{% static 'js/sse.js' %}"></script>-->
+<script src="{% static 'js/main.js' %}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
