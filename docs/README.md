@@ -1,4 +1,30 @@
-# *Map Route App Project* 
+<div style="text::center"> 
+  <h2>Map Route App Project</h2>
+</div>
+
+<div class="container badges" 
+style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 30px">
+
+<a href="https://github.com/badges/shields/pulse" alt="Activity">
+        <img src="https://img.shields.io/badge/version-1.2.3-blue" /></a>
+
+<a href="https://github.com/badges/shields/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/badges/shields" /></a>
+    
+<a href="https://circleci.com/gh/badges/shields/tree/master">
+    <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status">
+</a>
+    
+<a href="https://circleci.com/gh/badges/daily-tests">
+    <img src="https://img.shields.io/circleci/project/github/badges/daily-tests?label=service%20tests" alt="service-test status">
+</a>
+
+<a href="https://coveralls.io/github/badges/shields">
+    <img src="https://img.shields.io/coveralls/github/badges/shields"
+            alt="coverage">
+</a>
+
+</div>
 
 ---
 #### ~ API Documentation [API Docs]("http://localhost:8000/swagger")
