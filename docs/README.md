@@ -26,18 +26,12 @@ style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 3
 
 </div>
 
-#### ~ API Documentation [API Docs]("http://localhost:8000/swagger")
-
-This Project was actually developed by myself pretty long time ago, but now it is fully deployed, 
-well-documented, and fixed for all the bugs, that I was facing.
-
-### *This application is the concept/prototype of the map routing system, that people asked me to build for their business purpose*
-
-#### This App allows to get the optimal root to the destination with `Time` and `Distance` specified
-
 <p align="center">
-  <a href="*"><img src="./demo/demo.png" alt="FastAPI"></a>
-
+  This is home for `Map Route App`. Application, that allows you search for places based on their photos.
+  Renderers the optimal route to the destination from your existing location, 
+  provides information about the distance in meters, total time (how long it will take to get to this desirable place) 
+  as well as information about the place in general
+</p>
 ---
 
 ## *Requirements*
