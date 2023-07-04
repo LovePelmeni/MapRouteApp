@@ -26,7 +26,6 @@ style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 3
 
 </div>
 
----
 #### ~ API Documentation [API Docs]("http://localhost:8000/swagger")
 
 This Project was actually developed by myself pretty long time ago, but now it is fully deployed, 
