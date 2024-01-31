@@ -1,6 +1,4 @@
-<div style="display: flex; justify-content: center"> 
-  <h2 style='text::center'>Map Route App Project</h2>
-</div>
+# Map route app Project
 
 <div class="container badges" 
 style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 30px">
