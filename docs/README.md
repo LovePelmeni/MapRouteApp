@@ -1,4 +1,4 @@
-# Map route app Project
+# MapRouteApp Navigation
 
 <div class="container badges" 
 style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 30px">
