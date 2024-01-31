@@ -1,4 +1,4 @@
-<div style="text::center"> 
+<div style="text::center" style="display: flex; justify-content: center"> 
   <h2>Map Route App Project</h2>
 </div>
 
