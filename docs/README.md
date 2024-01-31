@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center"> 
-  <h2>Map Route App Project</h2>
+  <h2 style='text::center'>Map Route App Project</h2>
 </div>
 
 <div class="container badges" 
