@@ -26,6 +26,10 @@ style="display: flex; justify-content: center; column-gap: 5px; margin-bottom: 3
 
 </div>
 
+<p align="center">
+  <a><img src="https://github.com/LovePelmeni/MapRouteApp/blob/main/docs/demo/demo.png" style="width: 80%; height: 80%"></a>
+</p>
+
 <p style="text::center">
   This is home for `Map Route App`. Application, that allows you search for places based on their photos. Renderers the optimal route to the destination from your existing location, provides information about the distance in meters, total time (how long it will take to get to this desirable place) as well as information about the place in general.
 </p>
